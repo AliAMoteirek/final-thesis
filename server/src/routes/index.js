@@ -2,7 +2,7 @@ import express from 'express';
 import userRoute from './userRoute.js';
 import mediaRoute from './mediaRoute.js';
 import personRoute from './personRoute.js';
-import reviewRoute from './review.route.js';
+import reviewRoute from './reviewRoute.js';
 
 const router = express.Router();
 
