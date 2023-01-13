@@ -1,5 +1,6 @@
 import { Box } from '@mui/material';
 import { Outlet } from 'react-router-dom';
+import Footer from '../common/Footer';
 import GlobalLoading from '../common/GlobalLoading';
 
 const MainLayout = () => {
@@ -24,6 +25,7 @@ const MainLayout = () => {
       </Box>
 
       {/* footer */}
+      <Footer />
       {/* footer */}
     </>
   );
