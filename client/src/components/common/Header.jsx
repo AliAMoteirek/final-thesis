@@ -1,7 +1,9 @@
 import { useDispatch, useSelector } from 'react-redux';
 import MenuIcon from '@mui/icons-material/Menu';
-import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
-import WbSunnyOutlinedIcon from '@mui/icons-material/WbSunnyOutlined';
+// import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
+// import WbSunnyOutlinedIcon from '@mui/icons-material/WbSunnyOutlined';
+import Brightness4Icon from '@mui/icons-material/Brightness4';
+import Brightness7Icon from '@mui/icons-material/Brightness7';
 import { AppBar, Box, Button, IconButton, Stack, Toolbar } from '@mui/material';
 import { Link } from 'react-router-dom';
 import menuConfigs from '../../configs/menuConfigs';
@@ -72,8 +74,10 @@ const Header = () => {
                 </Button>
               ))}
               <IconButton sx={{ color: 'inherit' }} onClick={onSwitchTheme}>
-                {themeMode === themeModes.dark && <DarkModeOutlinedIcon />}
-                {themeMode === themeModes.light && <WbSunnyOutlinedIcon />}
+                {/* {themeMode === themeModes.dark && <DarkModeOutlinedIcon />}
+                {themeMode === themeModes.light && <WbSunnyOutlinedIcon />} */}
+                {themeMode === themeModes.dark && <Brightness7Icon />}
+                {themeMode === themeModes.light && <Brightness4Icon />}
               </IconButton>
             </Box>
             {/* main menu */}
