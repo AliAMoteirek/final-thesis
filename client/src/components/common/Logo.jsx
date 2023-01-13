@@ -1,12 +1,18 @@
-import { Typography, useTheme } from '@mui/material';
+import { Box, Typography, useTheme } from '@mui/material';
+import PlayCircleIcon from '@mui/icons-material/PlayCircle';
 
 const Logo = () => {
   const theme = useTheme();
 
   return (
-    <Typography fontWeight="700" fontSize="1.7rem">
-      Movie<span style={{ color: theme.palette.primary.main }}>House</span>
-    </Typography>
+    <Box display="flex" alignItems="center">
+      <PlayCircleIcon
+        sx={{ transform: 'scale(1.8)', color: theme.palette.primary.main }}
+      />
+      <Typography fontWeight="700" fontSize="1.7rem" padding={1}>
+        Movie<span style={{ color: theme.palette.primary.main }}>House</span>
+      </Typography>
+    </Box>
   );
 };
 
