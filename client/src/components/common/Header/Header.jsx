@@ -1,9 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
-import MenuIcon from '@mui/icons-material/Menu';
-import { AppBar, Box, IconButton, Stack, Toolbar } from '@mui/material';
+import { AppBar, Toolbar } from '@mui/material';
 import { themeModes } from '../../../configs/themeConfigs';
 import { setThemeMode } from '../../../redux/features/themeModeSlice';
-import Logo from '../Logo';
 import ScrollAppBar from '../ScrollAppBar';
 import MainMenu from './MainMenu';
 
