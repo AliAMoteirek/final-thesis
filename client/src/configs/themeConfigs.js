@@ -11,7 +11,7 @@ const themeConfigs = {
       mode === themeModes.dark
         ? {
             primary: {
-              main: 'linear-gradient(to right, rgba(90,196,165,1), rgba(68,153,243,0))',
+              main: '#5ac4a5',
               contrastText: '#ffffff',
             },
             secondary: {
@@ -25,7 +25,7 @@ const themeConfigs = {
           }
         : {
             primary: {
-              main: 'linear-gradient(to right, rgba(90,196,165,1), rgba(68,153,243,0))',
+              main: '#5ac4a5',
             },
             secondary: {
               main: '#7bceb9',
