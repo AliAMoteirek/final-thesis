@@ -6,10 +6,15 @@ import { setThemeMode } from '../../../redux/features/themeModeSlice';
 import ScrollAppBar from '../ScrollAppBar';
 import MainMenu from './MainMenu';
 import UserMenu from './UserMenu';
+import ToogleSidebar from './Sidebar/ToogleSidebar';
+import { useState } from 'react';
+import Sidebar from './Sidebar/Sidebar';
 
 const Header = () => {
   const { user } = useSelector((state) => state.user);
   const { themeMode } = useSelector((state) => state.themeMode);
+
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const dispatch = useDispatch();
 
@@ -20,13 +25,18 @@ const Header = () => {
     dispatch(setThemeMode(theme));
   };
 
+  const toggleSidebar = () => setSidebarOpen(!sidebarOpen);
+
   return (
     <>
+      <Sidebar open={sidebarOpen} toggleSidebar={toggleSidebar} />
+
       <ScrollAppBar>
         <AppBar elevation={0} sx={{ zIndex: 9999 }}>
           <Toolbar
             sx={{ alignItems: 'center', justifyContent: 'space-between' }}
           >
+            <ToogleSidebar toggleSidebar={toggleSidebar} />
             <MainMenu onSwitchTheme={onSwitchTheme} themeMode={themeMode} />
 
             {/* user menu */}
