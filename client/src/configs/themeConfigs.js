@@ -11,7 +11,7 @@ const themeConfigs = {
       mode === themeModes.dark
         ? {
             primary: {
-              main: '#5ac4a5',
+              main: '#24de72ff',
               contrastText: '#ffffff',
             },
             secondary: {
@@ -25,7 +25,7 @@ const themeConfigs = {
           }
         : {
             primary: {
-              main: '#5ac4a5',
+              main: '#24de72ff',
             },
             secondary: {
               main: '#7bceb9',
