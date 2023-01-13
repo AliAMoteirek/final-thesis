@@ -1,11 +1,14 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { AppBar, Toolbar } from '@mui/material';
+import { AppBar, Button, Stack, Toolbar } from '@mui/material';
 import { themeModes } from '../../../configs/themeConfigs';
+import { setAuthModalOpen } from '../../../redux/features/authModalSlice';
 import { setThemeMode } from '../../../redux/features/themeModeSlice';
 import ScrollAppBar from '../ScrollAppBar';
 import MainMenu from './MainMenu';
+import UserMenu from './UserMenu';
 
 const Header = () => {
+  const { user } = useSelector((state) => state.user);
   const { themeMode } = useSelector((state) => state.themeMode);
 
   const dispatch = useDispatch();
@@ -27,6 +30,17 @@ const Header = () => {
             <MainMenu onSwitchTheme={onSwitchTheme} themeMode={themeMode} />
 
             {/* user menu */}
+            <Stack spacing={3} direction="row" alignItems="center">
+              {!user && (
+                <Button
+                  variant="contained"
+                  onClick={() => dispatch(setAuthModalOpen(true))}
+                >
+                  sign in
+                </Button>
+              )}
+            </Stack>
+            {user && <UserMenu />}
             {/* user menu */}
           </Toolbar>
         </AppBar>
