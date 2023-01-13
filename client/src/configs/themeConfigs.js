@@ -12,7 +12,8 @@ const themeConfigs = {
         ? {
             primary: {
               // main: '#24de72ff',
-              main: '#5ac5d2ff',
+              // main: '#5ac5d2ff',
+              main: '#03C9D7',
               contrastText: '#ffffff',
             },
             secondary: {
@@ -29,7 +30,8 @@ const themeConfigs = {
         : {
             primary: {
               // main: '#24de72ff',
-              main: '#5ac5d2ff',
+              // main: '#5ac5d2ff',
+              main: '#03C9D7',
             },
             secondary: {
               main: '#7bceb9',
