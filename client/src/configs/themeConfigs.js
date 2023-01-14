@@ -1,3 +1,4 @@
+import { colors } from '@mui/material';
 import { createTheme } from '@mui/material/styles';
 
 export const themeModes = {
@@ -29,15 +30,18 @@ const themeConfigs = {
           }
         : {
             primary: {
+              // main: '#ff0000',
               // main: '#24de72ff',
-              // main: '#5ac5d2ff',
-              main: '#03C9D7',
+              main: '#5ac5d2ff',
+              // main: '#03C9D7',
             },
             secondary: {
+              // main: '#f44336',
               main: '#7bceb9',
             },
             background: {
-              default: '#eceae7',
+              // default: '#eceae7',
+              default: colors.grey['100'],
             },
           };
 

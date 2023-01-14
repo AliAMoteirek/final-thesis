@@ -9,13 +9,13 @@ const mediaCategory = {
 };
 
 const backdropPath = (imgEndpoint) =>
-  `https://iamge.tmdb.org/t/p/original${imgEndpoint}`;
+  `https://image.tmdb.org/t/p/original${imgEndpoint}`;
 
 const posterPath = (imgEndpoint) =>
-  `https://iamge.tmdb.org/t/p/w500${imgEndpoint}`;
+  `https://image.tmdb.org/t/p/w500${imgEndpoint}`;
 
 const youtubePath = (videoId) =>
-  `https://ww.youtube.com/embed/${videoId}?controls=0`;
+  `https://www.youtube.com/embed/${videoId}?controls=0`;
 
 const tmdbConfigs = {
   mediaType,
