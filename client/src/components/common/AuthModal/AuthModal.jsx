@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setAuthModalOpen } from '../../../redux/features/authModalSlice';
 import Logo from '../Logo';
+import SignForm from '../Sign/SignForm';
 import uiAuthModalConfigs from './uiAuthModalConfigs';
 
 const actionState = {
@@ -32,6 +33,11 @@ const AuthModal = () => {
           <Box sx={{ textAlign: 'center', marginBottom: '2rem' }}>
             <Logo />
           </Box>
+          <SignForm
+            action={action}
+            actionState={actionState}
+            swtichAuthState={swtichAuthState}
+          />
         </Box>
       </Box>
     </Modal>
