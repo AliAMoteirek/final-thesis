@@ -60,13 +60,7 @@ const HeroSlide = ({ mediaType, mediaCategory }) => {
   }, [dispatch, mediaCategory, mediaType]);
 
   return (
-    <Box
-      sx={{
-        ...uiHeroSlide.mainBox({
-          ...uiConfigs.style.gradientBgImage[theme.palette.mode],
-        }),
-      }}
-    >
+    <Box sx={{ ...uiHeroSlide.mainBox(theme.palette.mode) }}>
       <Swiper
         grabCursor={true}
         loop={true}
@@ -81,21 +75,21 @@ const HeroSlide = ({ mediaType, mediaCategory }) => {
           <SwiperSlide key={index}>
             <Box
               sx={{
-                ...uiHeroSlide.boxBackdrop(
-                  tmdbConfigs.backdropPath(
-                    movie.backdrop_path || movie.poster_path
-                  )
-                ),
+                paddingTop: {
+                  xs: '130%',
+                  sm: '80%',
+                  md: '60%',
+                  lg: '45%',
+                },
+                backgroundPosition: 'top',
+                backgroundSize: 'cover',
+                backgroundImage: `url(${tmdbConfigs.backdropPath(
+                  movie.backdrop_path || movie.poster_path
+                )})`,
               }}
             />
             <Box
-              sx={{
-                ...uiHeroSlide.boxHorizontalGradient({
-                  ...uiConfigs.style.horizontalGradientBgImage[
-                    theme.palette.mode
-                  ],
-                }),
-              }}
+              sx={{ ...uiHeroSlide.boxHorizontalGradient(theme.palette.mode) }}
             />
             <Box sx={{ ...uiHeroSlide.boxMovieDetailsContainer }}>
               <Box sx={{ ...uiHeroSlide.boxMovieDetails }}>
