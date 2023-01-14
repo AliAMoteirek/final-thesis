@@ -1,5 +1,5 @@
 import SigninForm from './SigninForm/SigninForm';
-import SignupForm from './SignupForm';
+import SignupForm from './SignupForm/SignupForm';
 
 const SignForm = ({ action, actionState, swtichAuthState }) => {
   return (

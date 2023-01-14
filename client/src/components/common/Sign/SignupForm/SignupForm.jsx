@@ -7,29 +7,29 @@ import userApi from '../../../../api/modules/userApi';
 import { setAuthModalOpen } from '../../../../redux/features/authModalSlice';
 import { setUser } from '../../../../redux/features/userSlice';
 import SignButton from '../SignButton';
-import SigninList from './SigninList';
-import singinFormValues from './singinFormValues';
+import singupFormValues from './signupFormValues';
+import SignupList from './SignupList';
 
-const SigninForm = ({ switchAuthState }) => {
+const SignupForm = ({ switchAuthState }) => {
   const dispatch = useDispatch();
 
   const [isLoginRequest, setIsLoginRequest] = useState(false);
   const [errorMessage, setErrorMessage] = useState();
 
-  const signinForm = useFormik({
-    ...singinFormValues,
+  const signupForm = useFormik({
+    ...singupFormValues,
     onSubmit: async (values) => {
       setErrorMessage(undefined);
       setIsLoginRequest(true);
 
-      const { response, error } = await userApi.signin(values);
+      const { response, error } = await userApi.signup(values);
       setIsLoginRequest(false);
 
       if (response) {
-        signinForm.resetForm();
+        signupForm.resetForm();
         dispatch(setUser(response));
         dispatch(setAuthModalOpen(false));
-        toast.success('Signed in successful');
+        toast.success('Signed in successfully');
       }
 
       if (error) setErrorMessage(error.message);
@@ -37,17 +37,17 @@ const SigninForm = ({ switchAuthState }) => {
   });
 
   return (
-    <Box component="form" onSubmit={signinForm.handleSubmit}>
-      <SigninList signinForm={signinForm} />
+    <Box component="form" onSubmit={signupForm.handleSubmit}>
+      <SignupList signupForm={signupForm} />
 
-      <SignButton isLoginRequest={isLoginRequest} title="sign in" />
+      <SignButton isLoginRequest={isLoginRequest} title="sign up" />
 
       <Button
         fullWidth
         sx={{ marginTop: '1rem' }}
         onClick={() => switchAuthState()}
       >
-        sign up
+        sign in
       </Button>
 
       {errorMessage && (
@@ -61,4 +61,4 @@ const SigninForm = ({ switchAuthState }) => {
   );
 };
 
-export default SigninForm;
+export default SignupForm;

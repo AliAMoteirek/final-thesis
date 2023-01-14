@@ -1,6 +1,6 @@
 import { LoadingButton } from '@mui/lab';
 
-const SigninButton = ({ isLoginRequest }) => {
+const SignButton = ({ title, isLoginRequest }) => {
   return (
     <LoadingButton
       type="submit"
@@ -10,9 +10,9 @@ const SigninButton = ({ isLoginRequest }) => {
       sx={{ marginTop: 4 }}
       loading={isLoginRequest}
     >
-      sign in
+      {title}
     </LoadingButton>
   );
 };
 
-export default SigninButton;
+export default SignButton;
