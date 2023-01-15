@@ -19,7 +19,6 @@ import { routesGen } from '../../../routes/routes';
 import uiConfigs from '../../../configs/uiConfigs';
 import CircularRate from '../CircularRate/CircularRate';
 
-import tmdbConfigs from '../../../api/configs/tmdbConfigs';
 import genreApi from '../../../api/modules/genreApi';
 import mediaApi from '../../../api/modules/mediaApi';
 import uiHeroSlide from './uiHeroSlide';
