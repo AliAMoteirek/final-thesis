@@ -9,7 +9,7 @@ const Logo = () => {
       <PlayCircleIcon
         sx={{ transform: 'scale(1.8)', color: theme.palette.primary.main }}
       />
-      <Typography fontWeight="700" fontSize="1.7rem" padding={1}>
+      <Typography fontWeight="700" fontSize="1.7rem" padding={2}>
         Movie<span style={{ color: theme.palette.primary.main }}>House</span>
       </Typography>
     </Box>

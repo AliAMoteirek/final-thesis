@@ -73,21 +73,7 @@ const HeroSlide = ({ mediaType, mediaCategory }) => {
       >
         {movies.map((movie, index) => (
           <SwiperSlide key={index}>
-            <Box
-              sx={{
-                paddingTop: {
-                  xs: '130%',
-                  sm: '80%',
-                  md: '60%',
-                  lg: '45%',
-                },
-                backgroundPosition: 'top',
-                backgroundSize: 'cover',
-                backgroundImage: `url(${tmdbConfigs.backdropPath(
-                  movie.backdrop_path || movie.poster_path
-                )})`,
-              }}
-            />
+            <Box sx={{ ...uiHeroSlide.boxBackdrop(movie) }} />
             <Box
               sx={{ ...uiHeroSlide.boxHorizontalGradient(theme.palette.mode) }}
             />

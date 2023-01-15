@@ -1,3 +1,4 @@
+import tmdbConfigs from '../../../api/configs/tmdbConfigs';
 import uiConfigs from '../../../configs/uiConfigs';
 
 const uiHeroSlide = {
@@ -25,7 +26,9 @@ const uiHeroSlide = {
     },
     backgroundPosition: 'top',
     backgroundSize: 'cover',
-    backgroundImage: `url(${movie.backdrop_path || movie.poster_path})`,
+    backgroundImage: `url(${tmdbConfigs.backdropPath(
+      movie.backdrop_path || movie.poster_path
+    )})`,
   }),
   boxHorizontalGradient: (img) => ({
     width: '100%',
