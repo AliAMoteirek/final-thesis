@@ -16,7 +16,7 @@ const ToogleSidebar = ({ toggleSidebar }) => {
         <MenuIcon />
       </IconButton>
 
-      <Box sx={{ display: { xs: 'inline-block', md: 'none' } }}>
+      <Box sx={{ display: { xs: 'none', sm: 'inline-block', md: 'none' } }}>
         <Logo />
       </Box>
     </Stack>
