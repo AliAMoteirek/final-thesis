@@ -24,8 +24,6 @@ const MediaSlide = ({ mediaType, mediaCategory }) => {
     getMedias();
   }, [mediaCategory, mediaType]);
 
-  console.log(medias);
-
   return (
     <>
       <AutoSwiper>

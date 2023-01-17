@@ -19,14 +19,12 @@ const MainMenu = ({ onSwitchTheme, themeMode }) => {
         <Button
           key={index}
           sx={{
-            color: appState.includes(item.state)
-              ? 'primary.contrastText'
-              : 'inherit',
+            color: 'inherit',
             mr: 2,
           }}
           component={Link}
           to={item.path}
-          variant={appState.includes(item.state) ? 'outlined' : 'text'}
+          variant={appState.includes(item.state) ? 'contained' : 'text'}
         >
           {item.display}
         </Button>

@@ -15,6 +15,7 @@ const themeConfigs = {
               // main: '#24de72ff',
               // main: '#5ac5d2ff',
               main: '#03C9D7',
+              text: '#ffffff',
               contrastText: '#ffffff',
             },
             secondary: {
@@ -33,6 +34,7 @@ const themeConfigs = {
               // main: '#ff0000',
               // main: '#24de72ff',
               main: '#5ac5d2ff',
+              contrastText: '#ffffff',
               // main: '#03C9D7',
             },
             secondary: {
