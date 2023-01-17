@@ -24,14 +24,12 @@ const MainMenu = ({ onSwitchTheme, themeMode }) => {
           }}
           component={Link}
           to={item.path}
-          variant={appState.includes(item.state) ? 'contained' : 'text'}
+          variant={appState.includes(item.state) ? 'outlined' : 'text'}
         >
           {item.display}
         </Button>
       ))}
       <IconButton sx={{ color: 'inherit' }} onClick={onSwitchTheme}>
-        {/* {themeMode === themeModes.dark && <DarkModeOutlinedIcon />}
-                {themeMode === themeModes.light && <WbSunnyOutlinedIcon />} */}
         {themeMode === themeModes.dark && <Brightness7Icon />}
         {themeMode === themeModes.light && <Brightness4Icon />}
       </IconButton>
