@@ -3,7 +3,7 @@ const uiConfigs = {
     gradientBgImage: {
       dark: {
         backgroundImage:
-          'linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0))',
+          'linear-gradient(to top, rgba(10,32,41,1), rgba(0,0,0,0))',
       },
       light: {
         backgroundImage:
@@ -13,7 +13,7 @@ const uiConfigs = {
     horizontalGradientBgImage: {
       dark: {
         backgroundImage:
-          'linear-gradient(to right, rgba(0,0,0,1), rgba(0,0,0,0))',
+          'linear-gradient(to right, rgba(10,32,41,1), rgba(0,0,0,0))',
       },
       light: {
         backgroundImage:
