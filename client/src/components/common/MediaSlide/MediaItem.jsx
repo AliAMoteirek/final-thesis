@@ -114,16 +114,7 @@ const MediaItem = ({ media, mediaType }) => {
 
         {/* people */}
         {mediaType === 'people' && (
-          <Box
-            sx={{
-              position: 'absolute',
-              width: '100%',
-              height: 'max-content',
-              bottom: 0,
-              padding: '10px',
-              backgroundColor: 'rgba(0,0,0,0.6)',
-            }}
-          >
+          <Box sx={{ ...uiMediaItem.boxPeople }}>
             <Typography sx={{ ...uiConfigs.style.typoLines(1, 'left') }}>
               {media.name}
             </Typography>

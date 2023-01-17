@@ -26,6 +26,14 @@ const uiMediaItem = {
     transform: 'translate(-50%, -50%)',
     '& .MuiButton-startIcon': { marginRight: '-4px' },
   },
+  boxPeople: {
+    position: 'absolute',
+    width: '100%',
+    height: 'max-content',
+    bottom: 0,
+    padding: '10px',
+    backgroundColor: 'rgba(10,32,41,0.6)',
+  },
 };
 
 export default uiMediaItem;
