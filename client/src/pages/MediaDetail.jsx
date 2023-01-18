@@ -16,6 +16,7 @@ import favoriteApi from '../api/modules/favoriteApi';
 import Container from '../components/common/Container';
 import MediaVideosSlide from '../components/common/MediaVideosSlide/MediaVideosSlide';
 import BackdropSlide from '../components/common/BackdropSlide/BackdropSlide';
+import PosterSlide from '../components/common/PosterSlide/PosterSlide';
 
 const MediaDetail = () => {
   const { mediaType, mediaId } = useParams();
@@ -166,6 +167,14 @@ const MediaDetail = () => {
           </Container>
         )}
         {/* media backdrop */}
+
+        {/* media posters */}
+        {media.images.posters.length > 0 && (
+          <Container header="posters">
+            <PosterSlide posters={media.images.posters} />
+          </Container>
+        )}
+        {/* media posters */}
       </Box>
     </>
   ) : null;
