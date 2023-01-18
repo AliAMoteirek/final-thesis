@@ -1,7 +1,6 @@
 import { Box } from '@mui/material';
 import { SwiperSlide } from 'swiper/react';
 import AutoSwiper from '../MediaSlide/AutoSwiper';
-import NavigationSwipper from '../NavigationSwipper/NavigationSwipper';
 import uiPosterSlide from './uiPosterSlide';
 
 const PosterSlide = ({ posters }) => {

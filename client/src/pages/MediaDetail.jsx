@@ -17,6 +17,8 @@ import Container from '../components/common/Container';
 import MediaVideosSlide from '../components/common/MediaVideosSlide/MediaVideosSlide';
 import BackdropSlide from '../components/common/BackdropSlide/BackdropSlide';
 import PosterSlide from '../components/common/PosterSlide/PosterSlide';
+import RecommendSlide from '../components/common/RecommendSlide/RecommendSlide';
+import MediaSlide from '../components/common/MediaSlide/MediaSlide';
 
 const MediaDetail = () => {
   const { mediaType, mediaId } = useParams();
@@ -175,6 +177,20 @@ const MediaDetail = () => {
           </Container>
         )}
         {/* media posters */}
+
+        {/* media recommendation */}
+        <Container header="you may also like">
+          {media.recommend.length > 0 && (
+            <RecommendSlide medias={media.recommend} mediaType={mediaType} />
+          )}
+          {media.recommend.length === 0 && (
+            <MediaSlide
+              mediaType={mediaType}
+              mediaCategory={tmdbConfigs.mediaCategory.top_rated}
+            />
+          )}
+        </Container>
+        {/* media recommendation */}
       </Box>
     </>
   ) : null;
