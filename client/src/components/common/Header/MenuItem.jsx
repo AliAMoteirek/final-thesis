@@ -23,7 +23,7 @@ const MenuItem = ({ anchorEl, setAnchorEl }) => {
       {menuConfigs.user.map((item, index) => (
         <ListItemButton
           component={Link}
-          to={index.path}
+          to={item.path}
           key={index}
           onClick={() => setAnchorEl(null)}
         >

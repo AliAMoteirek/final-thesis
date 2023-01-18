@@ -1,5 +1,7 @@
+import PersonDetailContent from '../components/common/PersonDetailContent/PersonDetailContent';
+
 const PersonDetail = () => {
-  return <div>PersonDetail</div>;
+  return <PersonDetailContent />;
 };
 
 export default PersonDetail;
