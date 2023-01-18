@@ -36,6 +36,7 @@ const MediaDetail = () => {
   const videoRef = useRef(null);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     const getMedia = async () => {
       dispatch(setGlobalLoading(true));
 
@@ -156,11 +157,16 @@ const MediaDetail = () => {
         {/* media content */}
 
         {/* media vidoes */}
-        <div ref={videoRef} style={{ paddingTop: '2rem' }}>
-          <Container header="Vidoes">
-            <MediaVideosSlide videos={[...media.vidoes.results.splice(0, 5)]} />
-          </Container>
-        </div>
+        {media.vidoes.results.length > 0 && (
+          <div ref={videoRef} style={{ paddingTop: '2rem' }}>
+            <Container header="Vidoes">
+              <MediaVideosSlide
+                videos={[...media.vidoes.results.splice(0, 5)]}
+              />
+            </Container>
+          </div>
+        )}
+
         {/* media vidoes */}
 
         {/* media backdrop */}
