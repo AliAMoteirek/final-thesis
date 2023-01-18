@@ -1,5 +1,13 @@
+import { Toolbar } from '@mui/material';
+import MediaSearchItem from '../components/common/MediaSearchItem/MediaSearchItem';
+
 const MediaSearch = () => {
-  return <div>MediaSearch</div>;
+  return (
+    <>
+      <Toolbar />
+      <MediaSearchItem />
+    </>
+  );
 };
 
 export default MediaSearch;
