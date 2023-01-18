@@ -6,7 +6,7 @@ import uiBackdropSlide from './uiBackdropSlide';
 const BackdropSlide = ({ backdrops }) => {
   return (
     <NavigationSwipper>
-      {backdrops.splice(0, 10).map((item, index) => (
+      {[...backdrops].splice(0, 10).map((item, index) => (
         <SwiperSlide key={index}>
           <Box sx={{ ...uiBackdropSlide.mainBox(item) }} />
         </SwiperSlide>
