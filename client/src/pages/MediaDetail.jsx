@@ -10,11 +10,14 @@ import { Box } from '@mui/material';
 import uiConfigs from '../configs/uiConfigs';
 import MediaDetailPoster from '../components/common/MediaDetailContent/MediaDetailPoster';
 import MediaDetailInfo from '../components/common/MediaDetailContent/MediaDetailInfo';
+import { setAuthModalOpen } from '../redux/features/authModalSlice';
+import { addFavorite, removeFavorite } from '../redux/features/userSlice';
+import favoriteApi from '../api/modules/favoriteApi';
 
 const MediaDetail = () => {
   const { mediaType, mediaId } = useParams();
 
-  const { user, listFavorite } = useSelector((state) => state.user);
+  const { user, listFavorites } = useSelector((state) => state.user);
 
   const [media, setMedia] = useState();
   const [isFavorite, setIsFavorite] = useState(false);
@@ -48,6 +51,63 @@ const MediaDetail = () => {
     getMedia();
   }, [dispatch, mediaId, mediaType]);
 
+  const onFavoriteClick = async () => {
+    if (!user) return dispatch(setAuthModalOpen(true));
+
+    if (onRequest) return;
+
+    if (isFavorite) {
+      onRemoveFavorite();
+      return;
+    }
+
+    setOnRequest(true);
+
+    const body = {
+      mediaId: media.id,
+      mediaTitle: media.title || media.name,
+      mediaType: mediaType,
+      mediaPoster: media.poster_path,
+      mediaRate: media.vote_average,
+    };
+
+    const { response, error } = await favoriteApi.add(body);
+
+    setOnRequest(false);
+
+    if (error) toast.error(error.message);
+
+    if (response) {
+      dispatch(addFavorite(response));
+      setIsFavorite(true);
+      toast.success('Successfully added to favorites');
+    }
+  };
+
+  const onRemoveFavorite = async () => {
+    if (onRequest) return;
+
+    setOnRequest(true);
+
+    const favorite = listFavorites.find(
+      (e) => e.mediaId.toString() === media.id.toString()
+    );
+
+    const { response, error } = await favoriteApi.remove({
+      favoriteId: favorite.id,
+    });
+
+    setOnRequest(false);
+
+    if (error) toast.error(error.message);
+
+    if (response) {
+      dispatch(removeFavorite(favorite));
+      setIsFavorite(false);
+      toast.success('Successfully removed from favorites');
+    }
+  };
+
   return media ? (
     <>
       <ImageHeader
@@ -73,11 +133,8 @@ const MediaDetail = () => {
               flexDirection: { md: 'row', xs: 'column' },
             }}
           >
-            {/* poster */}
             <MediaDetailPoster media={media} />
-            {/* poster */}
 
-            {/* media info */}
             <MediaDetailInfo
               genres={genres}
               isFavorite={isFavorite}
@@ -85,8 +142,8 @@ const MediaDetail = () => {
               mediaType={mediaType}
               onRequest={onRequest}
               videoRef={videoRef}
+              onFavoriteClick={onFavoriteClick}
             />
-            {/* media info */}
           </Box>
         </Box>
         {/* media content */}

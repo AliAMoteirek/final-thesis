@@ -17,6 +17,7 @@ const MediaDetailInfo = ({
   videoRef,
   onRequest,
   isFavorite,
+  onFavoriteClick,
 }) => {
   return (
     <Box
@@ -80,7 +81,7 @@ const MediaDetailInfo = ({
             }
             loadingPosition="start"
             loading={onRequest}
-            // onClick={}
+            onClick={onFavoriteClick}
           />
           <Button
             variant="contained"
