@@ -15,6 +15,7 @@ const uiReviewItems = {
     ...uiConfigs.style.backgroundImage(
       tmdbConfigs.posterPath(review.mediaPoster)
     ),
+    borderRadius: '5px',
   }),
   loadingButton: {
     position: { xs: 'relative', md: 'absolute' },
