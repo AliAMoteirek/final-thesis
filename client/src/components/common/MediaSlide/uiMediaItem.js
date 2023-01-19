@@ -1,8 +1,8 @@
 const uiMediaItem = {
   favoriteIcon: {
     position: 'absolute',
-    top: 2,
-    right: 2,
+    top: 20,
+    right: 20,
     fontSize: '2rem',
   },
   backDrop: {
