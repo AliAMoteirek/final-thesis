@@ -1,5 +1,7 @@
+import PasswordUpdateForm from '../components/common/PasswordUpdateForm/PasswordUpdateForm';
+
 const PasswordUpdate = () => {
-  return <div>PasswordUpdate</div>;
+  return <PasswordUpdateForm />;
 };
 
 export default PasswordUpdate;
