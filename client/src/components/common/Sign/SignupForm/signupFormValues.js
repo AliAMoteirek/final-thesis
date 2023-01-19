@@ -15,6 +15,7 @@ const singupFormValues = {
       .min(8, 'Password must be at least 8 characters')
       .required('Password is required'),
     confirmPassword: Yup.string()
+      .oneOf([Yup.ref('password')], 'confirmPassword does not match')
       .min(8, 'confirmPassword must be at least 8 characters')
       .required('confirmPassword is required'),
     displayName: Yup.string()
