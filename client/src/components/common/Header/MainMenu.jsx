@@ -12,7 +12,16 @@ const MainMenu = ({ onSwitchTheme, themeMode }) => {
 
   return (
     <Box flexGrow={1} alignItems="center" display={{ xs: 'none', md: 'flex' }}>
-      <Box sx={{ marginRight: '30px' }}>
+      <Box
+        sx={{
+          marginRight: '30px',
+          cursor: 'pointer',
+          textDecoration: 'none',
+          color: 'inherit',
+        }}
+        component={Link}
+        to="/"
+      >
         <Logo />
       </Box>
       {menuConfigs.main.map((item, index) => (
