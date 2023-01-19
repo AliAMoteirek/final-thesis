@@ -3,6 +3,7 @@ import userRoute from './userRoute.js';
 import mediaRoute from './mediaRoute.js';
 import personRoute from './personRoute.js';
 import reviewRoute from './reviewRoute.js';
+import chatRoute from './chatRoute.js';
 
 const router = express.Router();
 
@@ -10,5 +11,6 @@ router.use('/user', userRoute);
 router.use('/person', personRoute);
 router.use('/reviews', reviewRoute);
 router.use('/:mediaType', mediaRoute);
+router.use('/chat', chatRoute);
 
 export default router;

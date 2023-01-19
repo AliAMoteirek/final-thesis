@@ -1,5 +1,5 @@
 import { Configuration, OpenAIApi } from 'openai';
-import responseHandler from '../handlers/response.handler.js';
+import responseHandler from '../handlers/responseHandler.js';
 
 const getChatMainPage = async (req, res) => {
   try {
