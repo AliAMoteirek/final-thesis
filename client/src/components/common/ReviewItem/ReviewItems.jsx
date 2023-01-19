@@ -1,13 +1,7 @@
 import { useState } from 'react';
 import reviewApi from '../../../api/modules/reviewApi';
 import { toast } from 'react-toastify';
-import { Box, Stack, Typography } from '@mui/material';
-import { Link } from 'react-router-dom';
-import { routesGen } from '../../../routes/routes';
-import uiConfigs from '../../../configs/uiConfigs';
-import { LoadingButton } from '@mui/lab';
-import dayjs from 'dayjs';
-import DeleteIcon from '@mui/icons-material/Delete';
+import { Box } from '@mui/material';
 import uiReviewItems from './uiReviewItems';
 import ReviewPoster from './ReviewPoster';
 import ReviewLoadingButton from './ReviewLoadingButton';
