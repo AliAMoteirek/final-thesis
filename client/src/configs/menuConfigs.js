@@ -5,6 +5,7 @@ import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlin
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import RateReviewOutlinedIcon from '@mui/icons-material/RateReviewOutlined';
 import LockResetOutlinedIcon from '@mui/icons-material/LockResetOutlined';
+import ChatOutlinedIcon from '@mui/icons-material/ChatOutlined';
 
 const main = [
   {
@@ -45,6 +46,12 @@ const user = [
     path: '/reviews',
     icon: <RateReviewOutlinedIcon />,
     state: 'reviews',
+  },
+  {
+    display: 'chat',
+    path: '/chat',
+    icon: <ChatOutlinedIcon />,
+    state: 'chat',
   },
   {
     display: 'password update',

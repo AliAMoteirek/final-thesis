@@ -7,6 +7,7 @@ import MediaSearch from '../pages/MediaSearch';
 import PasswordUpdate from '../pages/PasswordUpdate';
 import ReviewList from '../pages/ReviewList';
 import ProtectedPage from '../components/common/ProtectedPage';
+import ChatPage from '../pages/ChatPage';
 
 export const routesGen = {
   home: '/',
@@ -61,6 +62,15 @@ const routes = [
       </ProtectedPage>
     ),
     state: 'reviews',
+  },
+  {
+    path: '/chat',
+    element: (
+      <ProtectedPage>
+        <ChatPage />
+      </ProtectedPage>
+    ),
+    state: 'chat',
   },
   {
     path: '/:mediaType',

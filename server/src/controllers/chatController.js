@@ -21,7 +21,7 @@ const addChat = async (req, res) => {
     const response = await openai.createCompletion({
       model: 'text-davinci-003',
       prompt: req.body.input,
-      temperature: 0.5,
+      temperature: 0,
       max_tokens: 4000,
       top_p: 1,
       frequency_penalty: 0.5,
