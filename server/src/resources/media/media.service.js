@@ -72,7 +72,7 @@ class Mediaservice {
       const tokenDecoded = authenticated.tokenDecode(req);
 
       if (tokenDecoded) {
-        const user = await userModel.findById(tokenDecoded.data);
+        const user = await userModel.findById(tokenDecoded.id);
 
         if (user) {
           const isFavorite = await favoriteModel.findOne({

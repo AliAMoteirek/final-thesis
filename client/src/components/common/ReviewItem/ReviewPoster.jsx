@@ -11,7 +11,7 @@ const ReviewPoster = ({ review }) => {
       }}
     >
       <Link
-        to={routesGen.mediaDetail(review.mediaType, review.mediaid)}
+        to={routesGen.mediaDetail(review.mediaType, review.mediaId)}
         style={{ color: 'unset', textDecoration: 'none' }}
       >
         <Box sx={{ ...uiReviewItems.linkedBox(review) }} />

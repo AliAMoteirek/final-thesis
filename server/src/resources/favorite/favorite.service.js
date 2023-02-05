@@ -8,7 +8,7 @@ class FavoriteService {
         mediaId: req.body.mediaId,
       });
 
-      if (isFavorite) return res.send(200).json(isFavorite);
+      if (isFavorite) return res.status(200).json(isFavorite);
 
       const favorite = new favoriteModel({
         ...req.body,
