@@ -9,12 +9,13 @@ import { useEffect, useRef, useState } from 'react';
 import chatApi from '../../../api/modules/chatApi';
 import { toast } from 'react-toastify';
 
-let arr = [{ type: 'bot', post: '...' }];
-
 const Chat = () => {
   const [input, setInput] = useState('');
-  const [posts, setPosts] = useState(arr);
   const { user } = useSelector((state) => state.user);
+  let arr = [
+    { type: 'bot', post: `Welcome "${user.displayName}" to our chat service!` },
+  ];
+  const [posts, setPosts] = useState(arr);
   const messagesEndRef = useRef(null);
 
   const fetchBotResponse = async () => {
