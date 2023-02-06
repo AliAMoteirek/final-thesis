@@ -33,7 +33,6 @@ class MediaController {
 
   #getGenres = async (req, res, next) => {
     try {
-      console.log('here');
       const response = await this.#mediaService.getGenres(req);
       return res.status(200).json(response);
     } catch (error) {
