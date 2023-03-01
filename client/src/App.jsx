@@ -21,7 +21,7 @@ const App = () => {
       {/* Configure toastify */}
       <ToastContainer
         position="bottom-left"
-        autoClose={50000}
+        autoClose={3000}
         hideProgressBar={false}
         newestOnTop={false}
         closeOnClick

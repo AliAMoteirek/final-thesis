@@ -3,10 +3,10 @@ import publicClient from '../client/publicClient';
 
 const mediaEndpoints = {
   list: ({ mediaType, mediaCategory, page }) =>
-    `${mediaType}/${mediaCategory}?page=${page}`,
-  detail: ({ mediaType, mediaId }) => `${mediaType}/detail/${mediaId}`,
+    `media/${mediaType}/category/${mediaCategory}?page=${page}`,
+  detail: ({ mediaType, mediaId }) => `media/${mediaType}/detail/${mediaId}`,
   search: ({ mediaType, query, page }) =>
-    `${mediaType}/search?query=${query}&page=${page}`,
+    `media/${mediaType}/search?query=${query}&page=${page}`,
 };
 
 const mediaApi = {

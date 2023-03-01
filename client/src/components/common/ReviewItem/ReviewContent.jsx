@@ -14,7 +14,7 @@ const ReviewContent = ({ review }) => {
     >
       <Stack spacing={1}>
         <Link
-          to={routesGen.mediaDetail(review.mediaType, review.mediaid)}
+          to={routesGen.mediaDetail(review.mediaType, review.mediaId)}
           style={{ color: 'unset', textDecoration: 'none' }}
         >
           <Typography
